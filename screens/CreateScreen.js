@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Icon } from 'native-base';
-import Header from '../components/Header';
+import CreateModal from '../components/CreateModal';
+import * as actions from '../actions';
+import { connect } from 'react-redux';
 
 class CreateScreen extends Component {
 
+handleModal(data){
+   this.props.toggleModal(false);
+}
 
     render() {
+      let {showModal} = this.props;
+      console.log('came into create page')
        return (
            <View style={{flex:1}}>
-            <Header navigation={this.props.navigation}  title={'Create'}/>
-            <View style={styles.container}>
-               <Text>CreateScreen</Text>
-               <Text>CreateScreen</Text>
-               <Text>CreateScreen</Text>
-               <Text>CreateScreen</Text>
-            </View>
+            <CreateModal showModal={showModal} closeModal={(data)=>{this.handleModal(data)}}/>
            </View>
        )
     }
@@ -29,4 +30,7 @@ const styles = StyleSheet.create({
     }
 })
 
-export default CreateScreen;
+
+export default connect(state => {
+  return { showModal: state.modal.createModal };
+}, actions)(CreateScreen);

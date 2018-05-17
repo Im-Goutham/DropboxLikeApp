@@ -8,6 +8,7 @@ import Header from '../components/Header';
 class FavoriteScreen extends Component {
 
     render() {
+        console.log('came into favorite page')
        return (
            <View style={{flex:1}}>
            <Header navigation={this.props.navigation}  title={'Favorite'}/>

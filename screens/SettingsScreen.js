@@ -4,7 +4,7 @@ import Header from '../components/Header';
 
 
 class SettingsScreen extends Component {
-  
+
     render() {
        return (
            <View style={{flex:1}}>

@@ -9,7 +9,7 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SHOW_MODAL:
-      return { createModal: !state.createModal };
+      return { createModal:  action.payload };
     default:
       return state;
   }

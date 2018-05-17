@@ -9,9 +9,10 @@ import {
 
 
 
-export const toggleModal = () => async dispatch => {
+export const toggleModal = (data) => async dispatch => {
+  console.log('data of modal  is '+data);
   try {
-    dispatch({ type: SHOW_MODAL});
+    dispatch({ type: SHOW_MODAL, payload: data});
   } catch (error) {
     throw error;
   }

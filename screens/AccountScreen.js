@@ -12,6 +12,7 @@ class AccountScreen extends Component {
 
 
     render() {
+        console.log('came into account page')
        return (
            <View style={{flex:1}}>
            <Header navigation={this.props.navigation} title={'Account'}/>
@@ -21,7 +22,7 @@ class AccountScreen extends Component {
                <Text>AccountScreen</Text>
                <Text>AccountScreen</Text>
                <View style={{justifyContent: "center" }}>
-               <Button transparent onPress={ () => this.props.navigation.navigate('myModal') }><Text>Go to settings</Text></Button>
+               <Button transparent onPress={ () => this.props.navigation.navigate('settings') }><Text>Go to settings</Text></Button>
                </View>
             </View>
            </View>

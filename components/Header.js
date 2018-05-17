@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
-import { View, Text,TouchableOpacity } from 'react-native';
+import { View, Text,TouchableOpacity ,TouchableHighlight, StyleSheet, ScrollView} from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base'
+import { connect } from 'react-redux';
+import * as actions from '../actions';
+import Modal from "react-native-modal";
 
+
+import CreateModal  from './CreateModal';
 
 class HeaderComponent extends Component {
 
+  state = {
+    modalVisible: false,
+  };
+
 
     render() {
-      let {title} = this.props;
+      let {title,showModal} = this.props;
        return (
+         <View>
           <Header>
            <Left style={{flex: 1}}/>
             <Body style={{flex: 1,alignItems:'center'}}>
@@ -16,9 +26,13 @@ class HeaderComponent extends Component {
             </Body>
            <Right  style={{flex: 1}}/>
         </Header>
+        {/*   <CreateModal showModal={showModal} toggleModal={() => this.props.toggleModal()}/>  */}
+
+        </View>
        )
     }
 }
 
-
-export default HeaderComponent;
+export default  connect(state => {
+  return { showModal: state.modal.createModal };
+}, actions)(HeaderComponent);

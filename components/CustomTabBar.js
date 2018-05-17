@@ -21,20 +21,19 @@ renderTabBarButton(route, idx){
            getLabel,
            renderIcon,
        } = this.props;
-     console.log('navigation is '+navigation)
        const color = navigationState.index === idx ? 'black' : 'black';
        const borderColor =  navigationState.index === idx ? 'black' : '#ffffff';
        const label = getLabel({ route });
-       console.log('label is '+label);
        return (
            <TouchableOpacity
                onPress={() => {
                    if(navigationState.index != idx ){
                        if(route.routeName == 'create'){
-                           alert(route.routeName);
-                           this.props.toggleModal();
+                          //  navigation.navigate(route.routeName); // Added this
+                           this.props.toggleModal(true);
                        }
                        else {
+                            this.props.toggleModal(false);
                            navigation.navigate(route.routeName);
                        }
                    }
