@@ -5,6 +5,8 @@ import CreateModal from '../components/CreateModal';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 import ImagePicker from 'react-native-image-picker';
+import { DocumentPicker, DocumentPickerUtil } from 'react-native-document-picker';
+
 
 
 class CreateScreen extends Component {
@@ -67,13 +69,48 @@ class CreateScreen extends Component {
     }
 
 
+    selectFileTapped(){
+      // iPhone/Android
+        DocumentPicker.show({
+           filetype: [DocumentPickerUtil.allFiles()],
+         },(error,res) => {
+           // Android
+
+           if (res && res.uri) {
+
+             console.log(
+                res.uri,
+                res.type, // mime type
+                res.fileName,
+                res.fileSize
+             );
+             let source = { uri: res.uri };
+             // You can also display the image using data:
+             // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+             this.props.toggleModal(false);
+             this.setState({
+
+               ImageSource: source
+
+             });
+           }
+           this.props.toggleModal(false);
+         });  
+    }
+
+
+
     render() {
       let {showModal} = this.props;
       let {ImageSource} = this.state;
-      console.log('came into create page')
        return (
            <View style={{flex:1}}>
-            <CreateModal showModal={showModal} closeModal={(data)=>{this.handleModal(data)}} openCamera={(type)=>{this.selectPhotoTapped(type)}}/>
+            <CreateModal
+                showModal={showModal}
+                closeModal={(data)=>{this.handleModal(data)}}
+                openCamera={(type)=>{this.selectPhotoTapped(type)}}
+                openFilePicker={()=>{this.selectFileTapped()}}
+            />
             {(ImageSource)? (<Image  source={this.state.ImageSource}  style={{height: 200, width: null, flex: 1}}/>): null}
            </View>
        )

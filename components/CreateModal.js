@@ -56,7 +56,7 @@ class CreateModal extends Component {
                      <Text>Upload photos and videos</Text>
                    </Body>
                  </ListItem>
-                 <ListItem icon>
+                 <ListItem icon onPress={()=>{this.props.openFilePicker()}}>
                    <Left>
                      <Icon name="md-cloud-upload" />
                    </Left>
