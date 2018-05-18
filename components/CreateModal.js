@@ -39,7 +39,7 @@ class CreateModal extends Component {
          >
            <View style={styles.modalContent}>
                <List itemDivider={false}>
-                 <ListItem icon noBorder style={{borderBottomWidth: 0}}>
+                 <ListItem icon onPress={()=>{this.props.openCamera('camera')}}>
                    <Left>
                      <Icon name="ios-camera"/>
                    </Left>
@@ -47,7 +47,7 @@ class CreateModal extends Component {
                      <Text>Upload from camera</Text>
                    </Body>
                  </ListItem>
-                 <ListItem icon noBorder>
+                 <ListItem icon onPress={()=>{this.props.openCamera('gallery')}}>
                    <Left>
                      <Icon name="ios-image" />
                    </Left>
@@ -55,7 +55,7 @@ class CreateModal extends Component {
                      <Text>Upload photos and videos</Text>
                    </Body>
                  </ListItem>
-                 <ListItem icon noBorder>
+                 <ListItem icon>
                    <Left>
                      <Icon name="md-cloud-upload" />
                    </Left>
@@ -63,7 +63,7 @@ class CreateModal extends Component {
                      <Text>Upload file</Text>
                    </Body>
                  </ListItem>
-                 <ListItem icon noBorder>
+                 <ListItem icon>
                    <Left>
                      <Icon name="md-folder" />
                    </Left>
