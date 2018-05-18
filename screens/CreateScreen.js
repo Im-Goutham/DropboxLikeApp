@@ -42,7 +42,6 @@ class CreateScreen extends Component {
 
     imageResponse(response){
           console.log('Response = ', response);
-
           if (response.didCancel) {
             console.log('User cancelled photo picker');
           }
@@ -58,7 +57,7 @@ class CreateScreen extends Component {
 
             // You can also display the image using data:
             // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-
+            this.props.toggleModal(false);
             this.setState({
 
               ImageSource: source

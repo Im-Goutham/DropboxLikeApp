@@ -31,9 +31,10 @@ class CreateModal extends Component {
            isVisible={showModal}
            backdropColor='black'
            backdropOpacity='0.20'
+           onSwipeThreshold={200}
            swipeDirection='bottom'
            style={styles.bottomModal}
-           onSwipe={() => this.props.closeModal(false)}
+           onSwipe={() => alert('came here')}
            onBackdropPress={() => this.props.closeModal(false)}
            onBackButtonPress={() => this.props.closeModal(false)}
          >
