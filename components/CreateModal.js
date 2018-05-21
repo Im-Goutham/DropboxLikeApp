@@ -31,7 +31,7 @@ class CreateModal extends Component {
            isVisible={showModal}
            backdropColor='black'
            backdropOpacity='0.20'
-           onSwipeThreshold={200}
+           onSwipeThreshold={100}
            swipeDirection='bottom'
            style={styles.bottomModal}
            onSwipe={() => alert('came here')}
@@ -83,7 +83,6 @@ class CreateModal extends Component {
 
 const styles =  StyleSheet.create({
   container: {
-    height:200,
     flexDirection: 'column',
    justifyContent: 'flex-end',
    alignItems:'flex-end',

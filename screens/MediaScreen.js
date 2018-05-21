@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import {Icon} from 'native-base';
 import Header from '../components/Header';
-
+import AdBanner from '../components/AdBanner';
 
 class MediaScreen extends Component {
 
@@ -16,6 +16,7 @@ class MediaScreen extends Component {
                <Text>MediaScreen</Text>
                <Text>MediaScreen</Text>
               </View>
+               <AdBanner/>
            </View>
        )
     }

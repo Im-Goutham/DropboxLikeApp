@@ -29,7 +29,7 @@ renderTabBarButton(route, idx){
                onPress={() => {
                    if(navigationState.index != idx ){
                        if(route.routeName == 'create'){
-                          //  navigation.navigate(route.routeName); // Added this
+                        //  navigation.navigate(route.routeName); // Added this
                            this.props.toggleModal(true);
                        }
                        else {

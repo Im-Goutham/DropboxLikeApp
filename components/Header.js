@@ -18,7 +18,6 @@ class HeaderComponent extends Component {
     render() {
       let {title,showModal} = this.props;
        return (
-         <View>
           <Header>
            <Left style={{flex: 1}}/>
             <Body style={{flex: 1,alignItems:'center'}}>
@@ -26,9 +25,6 @@ class HeaderComponent extends Component {
             </Body>
            <Right  style={{flex: 1}}/>
         </Header>
-        {/*   <CreateModal showModal={showModal} toggleModal={() => this.props.toggleModal()}/>  */}
-
-        </View>
        )
     }
 }

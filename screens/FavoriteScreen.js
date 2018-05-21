@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { Button , Icon} from 'native-base';
 
 import Header from '../components/Header';
-
+import AdBanner from '../components/AdBanner';
 
 class FavoriteScreen extends Component {
 
@@ -18,6 +18,7 @@ class FavoriteScreen extends Component {
                  <Text>FavoriteScreen</Text>
                  <Text>FavoriteScreen</Text>
               </View>
+            <AdBanner/>
            </View>
        )
     }

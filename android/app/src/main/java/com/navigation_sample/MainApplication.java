@@ -3,6 +3,8 @@ package com.navigation_sample;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import cl.json.RNSharePackage;
+import com.sbugert.rnadmob.RNAdMobPackage;
 import com.reactnativedocumentpicker.ReactNativeDocumentPicker;
 import com.imagepicker.ImagePickerPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
@@ -28,6 +30,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNSharePackage(),
+            new RNAdMobPackage(),
             new ReactNativeDocumentPicker(),
             new ImagePickerPackage(),
             new SplashScreenReactPackage(),

@@ -6,7 +6,7 @@ import * as actions from '../actions';
 
 
 import Header from '../components/Header';
-
+import AdBanner from '../components/AdBanner';
 
 class AccountScreen extends Component {
 
@@ -25,6 +25,7 @@ class AccountScreen extends Component {
                <Button transparent onPress={ () => this.props.navigation.navigate('settings') }><Text>Go to settings</Text></Button>
                </View>
             </View>
+            <AdBanner/>
            </View>
        )
     }

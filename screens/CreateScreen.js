@@ -8,6 +8,8 @@ import ImagePicker from 'react-native-image-picker';
 import { DocumentPicker, DocumentPickerUtil } from 'react-native-document-picker';
 
 
+import Header from '../components/Header';
+
 
 class CreateScreen extends Component {
 
@@ -95,7 +97,7 @@ class CreateScreen extends Component {
              });
            }
            this.props.toggleModal(false);
-         });  
+         });
     }
 
 
@@ -104,7 +106,9 @@ class CreateScreen extends Component {
       let {showModal} = this.props;
       let {ImageSource} = this.state;
        return (
-           <View style={{flex:1}}>
+            <View style={{flex:1}}>
+            <Header navigation={this.props.navigation} title={'Create'}/>
+            <View style={styles.container}>
             <CreateModal
                 showModal={showModal}
                 closeModal={(data)=>{this.handleModal(data)}}
@@ -112,6 +116,7 @@ class CreateScreen extends Component {
                 openFilePicker={()=>{this.selectFileTapped()}}
             />
             {(ImageSource)? (<Image  source={this.state.ImageSource}  style={{height: 200, width: null, flex: 1}}/>): null}
+          </View>
            </View>
        )
     }
