@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Container, Header, Content, List, ListItem, Text, Thumbnail, Body, Left, Right, Icon, ScrollView } from 'native-base';
+import { Container, Header, Content, List, ListItem, Text, Thumbnail, Body, Left, Right, Icon, Button } from 'native-base';
 
 class ListViewComponent extends Component {
 
@@ -18,7 +18,9 @@ class ListViewComponent extends Component {
                    <Text note>Its time to build a difference . .</Text>
                  </Body>
                  <Right>
-                   <Icon name="md-more" style={{color:'black'}}  hitSlop={{top: 20, bottom: 20, left: 50}} onPress={() => {this.props.toggleModal(true)}}/>
+                  <Button transparent light  onPress={() => {this.props.toggleModal(true)}}>
+                     <Icon name="md-more" style={{color:'black'}} />
+                  </Button>
                  </Right>
                </ListItem>
                <ListItem>
@@ -28,7 +30,9 @@ class ListViewComponent extends Component {
                     <Text note>Its time to build a difference . .</Text>
                   </Body>
                   <Right>
-                    <Icon name="md-more"  style={{color:'black'}} onPress={() => {this.props.toggleModal(true)}}/>
+                    <Button transparent light  onPress={() => {this.props.toggleModal(true)}}>
+                       <Icon name="md-more" style={{color:'black'}} />
+                    </Button>
                   </Right>
                 </ListItem>
                 <ListItem itemDivider>
@@ -41,7 +45,9 @@ class ListViewComponent extends Component {
                      <Text note>Its time to build a difference . .</Text>
                    </Body>
                    <Right>
-                     <Icon name="md-more"  style={{color:'black'}} onPress={() => {this.props.toggleModal(true)}}/>
+                     <Button transparent light  onPress={() => {this.props.toggleModal(true)}}>
+                       <Icon name="md-more" style={{color:'black'}} />
+                    </Button>
                    </Right>
                  </ListItem>
                  <ListItem itemDivider>
@@ -54,7 +60,9 @@ class ListViewComponent extends Component {
                       <Text note>Its time to build a difference . .</Text>
                     </Body>
                     <Right>
-                      <Icon name="md-more"  style={{color:'black'}} onPress={() => {this.props.toggleModal(true)}}/>
+                      <Button transparent light  onPress={() => {this.props.toggleModal(true)}}>
+                         <Icon name="md-more" style={{color:'black'}} />
+                      </Button>
                     </Right>
                   </ListItem>
                   <ListItem>
@@ -64,7 +72,9 @@ class ListViewComponent extends Component {
                        <Text note>Its time to build a difference . .</Text>
                      </Body>
                      <Right>
-                       <Icon name="md-more"  style={{color:'black'}} onPress={() => {this.props.toggleModal(true)}}/>
+                       <Button transparent light  onPress={() => {this.props.toggleModal(true)}}>
+                         <Icon name="md-more" style={{color:'black'}} />
+                      </Button>
                      </Right>
                    </ListItem>
                    <ListItem>
@@ -74,7 +84,9 @@ class ListViewComponent extends Component {
                         <Text note>Its time to build a difference . .</Text>
                       </Body>
                       <Right>
-                        <Icon name="md-more"  style={{color:'black'}} onPress={() => {this.props.toggleModal(true)}}/>
+                        <Button transparent light  onPress={() => {this.props.toggleModal(true)}}>
+                           <Icon name="md-more" style={{color:'black'}} />
+                        </Button>
                       </Right>
                     </ListItem>
                     <ListItem itemDivider>
@@ -87,7 +99,9 @@ class ListViewComponent extends Component {
                          <Text note>Its time to build a difference . .</Text>
                        </Body>
                        <Right>
-                         <Icon name="md-more"  style={{color:'black'}} onPress={() => {this.props.toggleModal(true)}}/>
+                         <Button transparent light  onPress={() => {this.props.toggleModal(true)}}>
+                             <Icon name="md-more" style={{color:'black'}} />
+                        </Button>
                        </Right>
                      </ListItem>
                      <ListItem>
@@ -97,7 +111,9 @@ class ListViewComponent extends Component {
                           <Text note>Its time to build a difference . .</Text>
                         </Body>
                         <Right>
-                          <Icon name="md-more"  style={{color:'black'}} onPress={() => {this.props.toggleModal(true)}}/>
+                          <Button transparent light  onPress={() => {this.props.toggleModal(true)}}>
+                             <Icon name="md-more" style={{color:'black'}} />
+                          </Button>
                         </Right>
                       </ListItem>
                       <ListItem>
@@ -107,7 +123,9 @@ class ListViewComponent extends Component {
                            <Text note>Its time to build a difference . .</Text>
                          </Body>
                          <Right>
-                           <Icon name="md-more"  style={{color:'black'}} onPress={() => {this.props.toggleModal(true)}}/>
+                           <Button transparent light  onPress={() => {this.props.toggleModal(true)}}>
+                             <Icon name="md-more" style={{color:'black'}} />
+                          </Button>
                          </Right>
                        </ListItem>
               </List>

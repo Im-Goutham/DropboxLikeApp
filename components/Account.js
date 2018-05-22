@@ -21,11 +21,13 @@ class AccountComponent extends Component {
             </ListItem>
             <Separator bordered />
             <ListItem>
-              <Left>
-                 <Text style={{color:'black',fontSize:18}}>Email</Text>
-              </Left>
-              <Body style={{alignItems:'flex-start'}}>
-                 <Text style={{color:'black',fontSize:18}}>chetandetroja@gmail.com</Text>
+              <Body style={{flexDirection:'row',flex:1}}>
+              <View style={{alignItems:'flex-start',flex:1}}>
+                <Text style={{color:'black',fontSize:18}}>Email</Text>
+              </View>
+              <View style={{alignItems:'flex-end',flex:3}}>
+                <Text style={{color:'black',fontSize:18}}>chetandetroja@gmail.com</Text>
+              </View>
               </Body>
             </ListItem>
             <ListItem>

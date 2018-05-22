@@ -3,6 +3,7 @@ package com.navigation_sample;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.RNFetchBlob.RNFetchBlobPackage;
 import cl.json.RNSharePackage;
 import com.sbugert.rnadmob.RNAdMobPackage;
 import com.reactnativedocumentpicker.ReactNativeDocumentPicker;
@@ -30,6 +31,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNFetchBlobPackage(),
             new RNSharePackage(),
             new RNAdMobPackage(),
             new ReactNativeDocumentPicker(),
