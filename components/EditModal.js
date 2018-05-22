@@ -35,9 +35,9 @@ class EditModal extends Component {
          <Modal
            isVisible={showModal}
            backdropColor='black'
-           backdropOpacity='0.20'
+           backdropOpacity={0.20}
            onSwipeThreshold={100}
-           swipeDirection='bottom'
+           swipeDirection='down'
            style={styles.bottomModal}
            onSwipe={() => alert('came here')}
            onBackdropPress={() => this.props.closeModal(false)}

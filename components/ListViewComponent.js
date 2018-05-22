@@ -6,7 +6,7 @@ class ListViewComponent extends Component {
 
     render() {
        return (
-          <Content>
+          <Content style={{backgroundColor:'white'}}>
               <List>
                 <ListItem itemDivider>
                   <Text>A</Text>
@@ -18,7 +18,7 @@ class ListViewComponent extends Component {
                    <Text note>Its time to build a difference . .</Text>
                  </Body>
                  <Right>
-                   <Icon name="md-more" style={{color:'black'}} onPress={() => {this.props.toggleModal(true)}}/>
+                   <Icon name="md-more" style={{color:'black'}}  hitSlop={{top: 20, bottom: 20, left: 50}} onPress={() => {this.props.toggleModal(true)}}/>
                  </Right>
                </ListItem>
                <ListItem>

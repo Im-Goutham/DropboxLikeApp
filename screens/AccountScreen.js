@@ -7,6 +7,7 @@ import * as actions from '../actions';
 
 import Header from '../components/Header';
 import AdBanner from '../components/AdBanner';
+import Account from '../components/Account';
 
 class AccountScreen extends Component {
 
@@ -16,15 +17,7 @@ class AccountScreen extends Component {
        return (
            <View style={{flex:1}}>
            <Header navigation={this.props.navigation} title={'Account'}/>
-            <View style={styles.container}>
-               <Text>{this.props.user ? this.props.user.username : '' }</Text>
-               <Text>AccountScreen</Text>
-               <Text>AccountScreen</Text>
-               <Text>AccountScreen</Text>
-               <View style={{justifyContent: "center" }}>
-               <Button transparent onPress={ () => this.props.navigation.navigate('settings') }><Text>Go to settings</Text></Button>
-               </View>
-            </View>
+            <Account/>
             <AdBanner/>
            </View>
        )

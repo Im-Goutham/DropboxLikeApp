@@ -23,7 +23,7 @@ class HeaderComponent extends Component {
             <Body style={{flex: 1,alignItems:'center'}}>
               <Title>{title}</Title>
             </Body>
-           <Right  style={{flex: 1}}/>
+           <Right style={{flex: 1}}/>
         </Header>
        )
     }
