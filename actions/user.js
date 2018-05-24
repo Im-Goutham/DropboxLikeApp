@@ -4,7 +4,7 @@ import {API_URL} from '../config'
 
 
 import {
-  SAVE_USER,
+  SAVE_USER, CHANGE_CONNECTION_STATUS
 } from './types';
 
 
@@ -19,6 +19,11 @@ export const signIn = (user, callback) => async dispatch => {
   } catch (error) {
     throw error;
   }
+};
+
+
+export const connectionState = ( status ) => {
+  return { type: CHANGE_CONNECTION_STATUS, payload: status };
 };
 
 // export const likeUser = (user) => {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text,TouchableOpacity ,TouchableHighlight, StyleSheet, ScrollView} from 'react-native';
+import { View, Text,TouchableOpacity ,TouchableHighlight, StyleSheet, ScrollView, NetInfo} from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base'
 import { connect } from 'react-redux';
 import * as actions from '../actions';
@@ -14,6 +14,26 @@ class HeaderComponent extends Component {
     modalVisible: false,
   };
 
+  componentDidMount() {
+      NetInfo.isConnected.addEventListener('change', this._handleConnectionChange);
+ }
+
+  componentWillUnmount() {
+    NetInfo.isConnected.removeEventListener('change', this._handleConnectionChange);
+  }
+
+
+  _handleConnectionChange = (isConnected) => {
+    // const { dispatch, actionQueue } = this.props;
+    // dispatch(connectionState({ status: isConnected }));
+    //
+    // if (isConnected && actionQueue.length > 0) {
+    //   actionQueue.forEach((url) => {
+    //     this.props.dispatch(requestPersonByUrl({ url }));
+    //   });
+    // }
+    this.props.connectionState(isConnected);
+  };
 
     render() {
       let {title,showModal} = this.props;

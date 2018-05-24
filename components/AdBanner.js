@@ -21,7 +21,7 @@ class AdBanner extends Component {
 
     render() {
        return (
-        <View style={{position: 'absolute',bottom: 0}}>
+        <View style={{bottom: 0}}>
          <AdMobBanner
            adSize="fullBanner"
            adUnitID="ca-app-pub-3940256099942544/2934735716"
