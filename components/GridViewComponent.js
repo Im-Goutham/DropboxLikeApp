@@ -5,6 +5,7 @@ import { Icon } from 'native-base';
 
 class GridViewComponent extends Component {
 
+
   renderItem({ item, index }) {
     return <View style={{
         flex: 1,
@@ -16,19 +17,21 @@ class GridViewComponent extends Component {
     }}>
        <Image style={{height:50,width:50}} source={require('../assets/images/pdf-logo.png')} />
        <View style={{marginTop:5}}>
-       <Text numberOfLines={1}>2018-01...5.pdf/</Text>.
+       <Text numberOfLines={1}>{item.name}</Text>
        </View>
        <View>
-          <Icon name="ios-more"/>
+          <Icon name="ios-more"  onPress={() => this.props.toggleModal(true)}/>
        </View>
     </View>
     }
     render () {
-    return (<FlatList
+    let {files} = this.props;
+    return (<View style={{flex:1}}><FlatList
+      numColumns={4}
       contentContainerStyle={styles.list}
-      data={[{key: 'a'}, {key: 'b'},{key: 'c'},{key: 'd'}, {key: 'e'},{key: 'f'},{key: 'g'}, {key: 'h'},{key: 'i'},{key: 'j'}]}
-      renderItem={this.renderItem}
-    />);
+      data={files}
+      renderItem={this.renderItem.bind(this)}
+    /></View>);
     }
 }
 
@@ -36,8 +39,7 @@ class GridViewComponent extends Component {
 const styles = StyleSheet.create({
   list: {
     justifyContent: 'center',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    flexDirection: 'column'
   }
 });
 

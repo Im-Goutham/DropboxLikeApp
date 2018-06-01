@@ -15,25 +15,31 @@ class HeaderComponent extends Component {
   };
 
   componentDidMount() {
-      NetInfo.isConnected.addEventListener('change', this._handleConnectionChange);
+    NetInfo.getConnectionInfo().then((connectionInfo) => {
+  //    console.log('Initial, type: ' + connectionInfo.type + ', effectiveType: ' + connectionInfo.effectiveType);
+      if(connectionInfo.type == 'none'){
+           this.props.connectionState(false);
+      }
+      else {
+          this.props.connectionState(true);
+      }
+    });
+      NetInfo.isConnected.addEventListener('connectionChange', this._handleConnectionChange);
  }
 
   componentWillUnmount() {
-    NetInfo.isConnected.removeEventListener('change', this._handleConnectionChange);
+    NetInfo.isConnected.removeEventListener('connectionChange', this._handleConnectionChange);
   }
 
 
   _handleConnectionChange = (isConnected) => {
-    // const { dispatch, actionQueue } = this.props;
-    // dispatch(connectionState({ status: isConnected }));
-    //
-    // if (isConnected && actionQueue.length > 0) {
-    //   actionQueue.forEach((url) => {
-    //     this.props.dispatch(requestPersonByUrl({ url }));
-    //   });
-    // }
     this.props.connectionState(isConnected);
   };
+
+  toggleView(){
+      let {viewType} = this.props;
+      viewType=='grid' ? this.props.toggleView('list') : this.props.toggleView('grid')
+  }
 
     render() {
       let {title,showModal} = this.props;
@@ -43,12 +49,12 @@ class HeaderComponent extends Component {
             <Body style={{flex: 1,alignItems:'center'}}>
               <Title>{title}</Title>
             </Body>
-           <Right style={{flex: 1}}/>
+           <Right style={{flex: 1}}><Icon name="md-create"  onPress={() => this.toggleView()}/></Right>
         </Header>
        )
     }
 }
 
 export default  connect(state => {
-  return { showModal: state.modal.createModal };
+  return { showModal: state.modal.createModal, viewType:  state.modal.viewType};
 }, actions)(HeaderComponent);
