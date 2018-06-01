@@ -10,6 +10,7 @@ const dirs = RNFetchBlob.fs.dirs;
 const android = RNFetchBlob.android;
 
 import Header from '../components/Header';
+import SubHeader from '../components/SubHeader';
 import AdBanner from '../components/AdBanner';
 import ListViewComponent from '../components/ListViewComponent';
 import GridViewComponent from '../components/GridViewComponent';
@@ -96,6 +97,7 @@ class HomeScreen extends Component {
        return (
            <View style={{flex:1}}>
                <Header navigation={this.props.navigation} title={'Home'}/>
+               <SubHeader navigation={this.props.navigation} title={'Home'}/>
                {
                  viewType=='grid'
                        ? <GridViewComponent

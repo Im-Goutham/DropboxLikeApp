@@ -4,11 +4,12 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'nativ
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Modal from "react-native-modal";
+import { Col, Row, Grid } from 'react-native-easy-grid';
 
 
 import CreateModal  from './CreateModal';
 
-class HeaderComponent extends Component {
+class SubHeader extends Component {
 
   state = {
     modalVisible: false,
@@ -42,19 +43,22 @@ class HeaderComponent extends Component {
   }
 
     render() {
-      let {title,showModal} = this.props;
+      let {title,viewType} = this.props;
        return (
-          <Header style={{backgroundColor:'white'}}>
-           <Left style={{flex: 1}}/>
-            <Body style={{flex: 1,alignItems:'center'}}>
-              <Title style={{color:'black'}}>{title}</Title>
-            </Body>
-           <Right style={{flex: 1}}><Icon name="md-create" style={{fontSize: 18}}/></Right>
-        </Header>
+          <View style={{flexDirection:'row',padding:20}} >
+          <Left>
+              <Text>Name <Icon name="ios-arrow-down" style={{fontSize:18}} /></Text>
+          </Left>
+          <Right>
+          {
+             (viewType=='grid')?  <Icon name="ios-list-outline"  onPress={() => this.toggleView()} /> :  <Icon name="md-apps"  onPress={() => this.toggleView()}/>
+          }
+          </Right>
+        </View>
        )
     }
 }
 
 export default  connect(state => {
-  return { showModal: state.modal.createModal, viewType:  state.modal.viewType};
-}, actions)(HeaderComponent);
+  return {  viewType:  state.modal.viewType};
+}, actions)(SubHeader);

@@ -21,9 +21,6 @@ class MediaScreen extends Component {
                <Text>MediaScreen</Text>
                <Text>MediaScreen</Text>
                <Text>MediaScreen</Text>
-               <Button success onPress={()=>{this.downloadFile()}}>
-                <Text>Download</Text>
-              </Button>
               </View>
                <AdBanner/>
            </View>
