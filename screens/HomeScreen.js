@@ -15,7 +15,6 @@ import AdBanner from '../components/AdBanner';
 import ListViewComponent from '../components/ListViewComponent';
 import GridViewComponent from '../components/GridViewComponent';
 import EditModal from '../components/EditModal';
-import ShareComponent from '../components/ShareComponent';
 
 class HomeScreen extends Component {
 
@@ -97,7 +96,7 @@ class HomeScreen extends Component {
        return (
            <View style={{flex:1}}>
                <Header navigation={this.props.navigation} title={'Home'}/>
-               <SubHeader navigation={this.props.navigation} title={'Home'}/>
+               <SubHeader/>
                {
                  viewType=='grid'
                        ? <GridViewComponent
@@ -113,7 +112,6 @@ class HomeScreen extends Component {
                 }
                <EditModal showModal={this.state.showModal} closeModal={(val) => {this.setState({showModal: val})}}/>
                <AdBanner/>
-               <ShareComponent />
            </View>
        )
     }
